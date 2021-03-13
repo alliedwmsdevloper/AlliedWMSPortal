@@ -11,43 +11,6 @@ h1   {color: blue;}
 p    {color: red;}
 </style>
 
-<script type="text/javascript">
-function validationUsername() {
-   var x = document.forms["validate"]["username"].value;
-    if (x == null || x == "") {
-        alert("username cannot be empty..!!");
-        return false;
-    }
-    validationPassword();
-    }
-    
-function validationPassword() {
-    	   var x = document.forms["validate"]["password"].value;
-    	    if (x == null || x == "" || ) and if(/\D/.test(x))) {
-    	        alert("password cannot be empty..!!");
-    	        return false;
-    	    }  
-    	    validationAccountno();
-    	    }
-function validationAccountno() {
-    	    	   var x = document.forms["validate"]["accountno"].value;
-    	    	    if (x == null || x == "" and if(/\D/.test(x))) {
-    	    	        alert("account number be empty..!!");
-    	    	        return false;
-    	    	    }
-    	    	    validationZipcode(); 
-    	    	    }
-   function validationZipcode() {
-    	    	  var x = document.forms["validate"]["zipcode"].value;
-    	    	   if (x == null || x == "" and if(/\D/.test(x))) {
-    	    	   alert("zipcode cannot be empty..!!");
-    	    	   return false;
-    	    	    	    }}
-    
- 
-</script>
-
-
 </head>
 <body>
 <div align ="center">
