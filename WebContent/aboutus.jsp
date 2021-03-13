@@ -32,7 +32,7 @@ p    {color: red;}
 <table>
 <h4> Company Overview</h4>
 
-
+This company is a music company based in colorado. 
 
 
 </body>
