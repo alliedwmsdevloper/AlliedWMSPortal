@@ -27,6 +27,14 @@ zipcode  int(5) NOT NULL,
 PRIMARY KEY (firstname)
 );
 
+CREATE TABLE `BankingDB`.`Inventory` (
+  `item_ID` VARCHAR(20) NOT NULL,
+  `Description` VARCHAR(45) NOT NULL,
+  `Avaliable` INT(10) NOT NULL,
+  `InStock` INT(10) NOT NULL,
+  `ID` INT NOT NULL,
+  `sold` INT NOT NULL);
+
 
 
 

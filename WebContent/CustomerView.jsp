@@ -26,6 +26,7 @@ ResultSet resultSet = null;
 %>
 <html>
 <head>
+<title>View Contacts</title>
 <style>
 body {background-color: powderblue;}
 h1,h4   {color: blue;}
@@ -34,15 +35,16 @@ p    {color: red;}
 </head>
 <body>
 <div align ="center">
-<h1>Allied CMS</h1>
+<h1>Allied WMS</h1>
 </div>
 
 <div align ="center">
 <table border="1">
 <tr>
 <td><a href="logingranted.jsp"><b>Home</b></a></td>
-<td><a href="AdminTranscation.jsp"><b>Transaction</b></a></td>
-<td><a href="login.jsp"><b>Logout</b></a></td>
+<td><a href="AdminTranscation.jsp"><b>Admin Control</b></a></td>
+<td><a href="aboutus.jsp"><b>About US</b></a></td>
+<td><a href="login.jsp" name= "logout"><b>Logout</b></a></td>
 </tr>
 </table>
 </div>

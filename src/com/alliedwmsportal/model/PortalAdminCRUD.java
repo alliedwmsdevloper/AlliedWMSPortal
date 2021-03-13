@@ -52,8 +52,8 @@ public class PortalAdminCRUD {
 		ps = con.prepareStatement(sql);
 		ps.setString(1, logincustomer.getUsername());
 		ps.setString(2, logincustomer.getPassword());
-		ps.setInt(3, logincustomer.getAN());
-		ps.setInt(4, logincustomer.getZipCode());
+		ps.setString(3, logincustomer.getAN());
+		ps.setString(4, logincustomer.getZipCode());
 		ResultSet rs = ps.executeQuery();
 		status = rs.next();
 		

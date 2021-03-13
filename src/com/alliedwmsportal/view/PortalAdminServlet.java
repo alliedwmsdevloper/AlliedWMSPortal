@@ -43,25 +43,35 @@ private static final long serialVersionUID = 1L;
 		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		int accountno = Integer.parseInt(request.getParameter("accountno"));
-		int zipcode = Integer.parseInt(request.getParameter("zipcode"));
+		//int accountno = Integer.parseInt(request.getParameter("accountno"));
+		//int zipcode = Integer.parseInt(request.getParameter("zipcode"));
+		String accountno = request.getParameter("accountno");
+		String zipcode = request.getParameter("zipcode");
 		PortalAdmin user = new PortalAdmin();
 		user.setUsername(username);
 		user.setPassword(password);
 		user.setAN(accountno);
 		user.setZipCode(zipcode);
+	
 		
-		if (unkownuser.validate(user))
-		{
-			RequestDispatcher dispatcher = request.getRequestDispatcher("logingranted.jsp");
-			dispatcher.forward(request, response);
+		if(!username.isEmpty() && !username.isEmpty() && !username.isEmpty() && !username.isEmpty()  ) {
+		
+				if (unkownuser.validate(user))
+					{
+							RequestDispatcher dispatcher = request.getRequestDispatcher("logingranted.jsp");
+							dispatcher.forward(request, response);
 			
+						}
+				else 
+				{
+			
+					response.sendRedirect("login.jsp");
+			
+				}
+		
 		}
-		else 
-		{
-			
+		else {
 			response.sendRedirect("login.jsp");
-			
 		}
 	
 	

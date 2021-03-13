@@ -8,14 +8,11 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%
-
 String dbUrl ="jdbc:mysql://localhost:3306/";
 String dbUname = "root";
 String database = "BankingDB";
 String dbPassword = "Letmein211!";
 String dbDriver = "com.mysql.cj.jdbc.Driver";
-
-
 try {
 Class.forName(dbDriver);
 } catch (ClassNotFoundException e) {
@@ -58,7 +55,6 @@ p    {color: red;}
 <div class= "form section">
 
 <%
-
 String username = request.getParameter("username");
 String password= request.getParameter("password");;
 String adminnumber = request.getParameter("adminnumber");
@@ -70,7 +66,6 @@ if(username!=null &&  password!=null && adminnumber!=null && zipcode!=null )
 if(username!="" &&  password!="" && adminnumber!="" && zipcode!="")
 {
 try {
-
 connection = DriverManager.getConnection(dbUrl+database, dbUname, dbPassword);
 String sql = "insert into record(username,password,accountnumber,zipcode) values(?,?,?,?)";
 pstatement = connection.prepareStatement(sql);
@@ -78,8 +73,6 @@ pstatement.setString(1, username);
 pstatement.setString(2, password);
 pstatement.setString(3, adminnumber);
 pstatement.setString(4, zipcode);
-
-
 updateQuery = pstatement.executeUpdate();
 if (updateQuery != 0) {%>
 <br>

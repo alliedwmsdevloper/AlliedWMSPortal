@@ -5,16 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Manage Users</title>
+<title>Manage Contacts</title>
 <style>
 body {background-color: powderblue;}
-h1   {color: blue;}
+h1,h4   {color: blue;}
 p    {color: red;}
 </style>
 </head>
 <body>
 <div align ="center">
-<h1>Add Customers</h1>
+<h1>Allied WMS</h1>
 </div>
 
 <div align ="center">
@@ -28,7 +28,7 @@ p    {color: red;}
 </table>
 </div>
 
-
+<h4>Add Contact</h4>
 <form action ="processnewcustomer.jsp" method="post">
 <div class= "deposit page">
 <p style="color:red">

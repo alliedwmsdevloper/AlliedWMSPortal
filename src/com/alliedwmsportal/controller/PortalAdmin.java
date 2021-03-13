@@ -6,8 +6,8 @@ public class PortalAdmin {
 
 	private String username;
 	private String password;
-	private int accountnumber;
-	private int zipcode;
+	private String accountnumber;
+	private String zipcode;
 	
 	public String getUsername() {
 		return username;
@@ -22,17 +22,17 @@ public class PortalAdmin {
 		this.password = password;
 	}	
 	
-	public int getAN() {
+	public String getAN() {
 		return accountnumber;
 	}
-	public void setAN(int accountnumber) {
-		this.accountnumber= accountnumber;
+	public void setAN ( String accountno) {
+		this.accountnumber= accountno;
 	}	
 	
-	public int getZipCode() {
+	public String getZipCode() {
 		return zipcode;
 	}
-	public void setZipCode(int zip) {
+	public void setZipCode(String zip) {
 		this.zipcode = zip;
 	}	
 	

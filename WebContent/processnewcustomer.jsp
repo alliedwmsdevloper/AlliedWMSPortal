@@ -8,14 +8,11 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%
-
 String dbUrl ="jdbc:mysql://localhost:3306/";
 String dbUname = "root";
 String database = "BankingDB";
 String dbPassword = "Letmein211!";
 String dbDriver = "com.mysql.cj.jdbc.Driver";
-
-
 try {
 Class.forName(dbDriver);
 } catch (ClassNotFoundException e) {
@@ -58,24 +55,20 @@ p    {color: red;}
 <div class= "form section">
 
 <%
-
 String firstname = request.getParameter("firstname");
 String lastname = request.getParameter("lastname");
-//int age  = Integer.valueOf(request.getParameter("age"));
 String age = request.getParameter("age");
 String city = request.getParameter("city");
 String state = request.getParameter("state");
 String company = request.getParameter("company");
 String zipcode = request.getParameter("zipcode");
-//int zipcode = Integer.valueOf(request.getParameter("zipcode"));
 PreparedStatement pstatement = null;
 int updateQuery = 0;
 if(firstname!=null &&  lastname!=null && age!=null && city!=null && state!=null &&    company!=null &&    zipcode!=null )
 {
-if(firstname!="" &&  lastname!= "" && age!=null && city!="" && state!="" &&    company!= "" &&    zipcode!=null)
+if(firstname!="" &&  lastname!= "" && age!="" && city!="" && state!="" &&    company!= "" &&    zipcode!="")
 {
 try {
-
 connection = DriverManager.getConnection(dbUrl+database, dbUname, dbPassword);
 String sql = "insert into customer(firstname,lastname,age,city,state,company,zipcode) values(?,?,?,?,?,?,?)";
 pstatement = connection.prepareStatement(sql);
@@ -86,7 +79,6 @@ pstatement.setString(4, city);
 pstatement.setString(5, state);
 pstatement.setString(6, company);
 pstatement.setString(7, zipcode);
-
 updateQuery = pstatement.executeUpdate();
 if (updateQuery != 0) {%>
 <br>
