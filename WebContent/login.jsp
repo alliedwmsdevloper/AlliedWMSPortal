@@ -15,10 +15,10 @@ p    {color: red;}
 <body>
 <div align ="center">
 <h1>Warehouse Managment System</h1>
-<h2>Admin Portal</h2>
+<h2>Admin Portal </h2>
 </div>
 
-<form action ="login" method="post"name = "validate" onsubmit="validationUsername()">
+<form action ="login" method="post"name = "validate">
 <div class= "login page">
 <p style="color:red">
 <div class= "form section">

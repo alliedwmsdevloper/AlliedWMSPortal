@@ -29,7 +29,7 @@ ResultSet resultSet = null;
 <title>Manage Users</title>
 <style>
 body {background-color: powderblue;}
-h1   {color: blue;}
+h1,h3   {color: blue;}
 p    {color: red;}
 </style>
 </head>
@@ -42,6 +42,7 @@ p    {color: red;}
 <table border="1">
 <tr>
 <td><a href="logingranted.jsp"><b>Home</b></a></td>
+<td><a href="AdminTranscation.jsp"><b>Make Transaction</b></a></td>
 <td><a href="aboutus.jsp"><b>About US</b></a></td>
 <td><a href="login.jsp"><b>Logout</b></a></td>
 </tr>
@@ -49,7 +50,7 @@ p    {color: red;}
 </div>
 
 
-<form action ="logingranted.jsp" method="post">
+<form action ="" method="post">
 <div class= "deposit page">
 <p style="color:red">
 <div class= "form section">
@@ -62,15 +63,16 @@ String city = request.getParameter("city");
 String state = request.getParameter("state");
 String company = request.getParameter("company");
 String zipcode = request.getParameter("zipcode");
+String cid = request.getParameter("id");
 PreparedStatement pstatement = null;
 int updateQuery = 0;
-if(firstname!=null &&  lastname!=null && age!=null && city!=null && state!=null &&    company!=null &&    zipcode!=null )
+if(firstname!=null &&  lastname!=null && age!=null && city!=null && state!=null &&    company!=null &&    zipcode!=null && cid!=null )
 {
-if(firstname!="" &&  lastname!= "" && age!="" && city!="" && state!="" &&    company!= "" &&    zipcode!="")
+if(firstname!="" &&  lastname!= "" && age!="" && city!="" && state!="" &&    company!= "" &&    zipcode!="" && cid!="")
 {
 try {
 connection = DriverManager.getConnection(dbUrl+database, dbUname, dbPassword);
-String sql = "insert into customer(firstname,lastname,age,city,state,company,zipcode) values(?,?,?,?,?,?,?)";
+String sql = "insert into customer(firstname,lastname,age,city,state,company,zipcode,id) values(?,?,?,?,?,?,?,?)";
 pstatement = connection.prepareStatement(sql);
 pstatement.setString(1, firstname);
 pstatement.setString(2, lastname);
@@ -79,6 +81,7 @@ pstatement.setString(4, city);
 pstatement.setString(5, state);
 pstatement.setString(6, company);
 pstatement.setString(7, zipcode);
+pstatement.setString(8, cid);
 updateQuery = pstatement.executeUpdate();
 if (updateQuery != 0) {%>
 <br>
@@ -87,7 +90,7 @@ if (updateQuery != 0) {%>
 </table>
 <h5> _______________________________________________________________________________________</h5>
 <table TABLE style="background-color: #powderblue;" WIDTH="30%" border="1">
-<tr><td><a href=""><b>View Contacts</b></td><td><input type="submit" value="->" name="order" onclick="location.href='CustomerView.jsp'"></td></tr>
+<tr><td><a href=""><b>View Customers</b></td><td><input type="submit" value="->" name="order" onclick="location.href='CustomerView.jsp'"></td></tr>
 </table>
 <h5> _______________________________________________________________________________________</h5>
 <%

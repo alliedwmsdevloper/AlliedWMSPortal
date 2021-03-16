@@ -26,7 +26,6 @@ ResultSet resultSet = null;
 %>
 <html>
 <head>
-<meta charset="UTF-8">
 <title>View Orders</title>
 <style>
 body {background-color: powderblue;}
@@ -58,27 +57,26 @@ p    {color: red;}
 <td>City</td>
 <td>State</td>
 <td>Zipcode</td>
-<td>Quanity</td>
+<td>Quantity</td>
 <td>Customer Id</td>
 <td>Product ID</td>
-<td></td>
 </tr>
 <%
 try{
 connection = DriverManager.getConnection(dbUrl+database, dbUname, dbPassword);
 statement=connection.createStatement();
-String sql ="select * from order";
+String sql ="select * from customerorder";
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
 <tr>
-<td><%=resultSet.getInt("orderID") %></td>
+<td><%=resultSet.getInt("orderid") %></td>
 <td><%=resultSet.getString("address") %></td>
 <td><%=resultSet.getString("city") %></td>
 <td><%=resultSet.getString("state") %></td>
 <td><%=resultSet.getInt("zipcode") %></td>
 <td><%=resultSet.getInt("quantity") %></td>
-<td><%=resultSet.getString("CID") %></td>
+<td><%=resultSet.getInt("CID") %></td>
 <td><%=resultSet.getInt("PID") %></td>
 </tr>
 <%

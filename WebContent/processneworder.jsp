@@ -45,6 +45,7 @@ p    {color: red;}
 <table border="1">
 <tr>
 <td><a href="logingranted.jsp"><b>Home</b></a></td>
+<td><a href="AdminTranscation.jsp"><b>Make Transaction</b></a></td>
 <td><a href="aboutus.jsp"><b>About US</b></a></td>
 <td><a href="login.jsp"><b>Logout</b></a></td>
 </tr>
@@ -52,7 +53,7 @@ p    {color: red;}
 </div>
 
 
-<form action ="logingranted.jsp" method="post">
+<form action ="" method="post">
 <div class= "deposit page">
 <p style="color:red">
 <div class= "form section">
@@ -60,7 +61,7 @@ p    {color: red;}
 <%
 
 
-String orderid = request.getParameter("orderID");
+String orderid = request.getParameter("orderid");
 String addr = request.getParameter("addr");
 String city = request.getParameter("city");
 String state = request.getParameter("state");
@@ -71,14 +72,14 @@ String pid = request.getParameter("pid");
 
 PreparedStatement pstatement = null;
 int updateQuery = 0;
-if(orderid!=null && addr!=null && city!=null && state!=null &&    zipcode!=null &&    quant!=null )
+if(orderid!=null && addr!=null && city!=null && state!=null &&    zipcode!=null &&    quant!=null && cid != null && pid!= null)
 {
-if(orderid!= "" && addr!= "" && city!="" && state!="" &&    zipcode!= "" &&    quant!= "")
+if(orderid!= "" && addr!= "" && city!="" && state!="" &&    zipcode!= "" &&    quant!= "" && cid!= "" && pid != "")
 {
 try {
 
 connection = DriverManager.getConnection(dbUrl+database, dbUname, dbPassword);
-String sql = "insert into order(orderID,address,city,state,zipcode,quantity,CID,PID) values(?,?,?,?,?,?,?,?)";
+String sql = "insert into customerorder(orderid,address,city,state,zipcode,quantity,CID,PID) values(?,?,?,?,?,?,?,?)";
 pstatement = connection.prepareStatement(sql);
 pstatement.setString(1, orderid);
 pstatement.setString(2, addr);
@@ -87,8 +88,7 @@ pstatement.setString(4, state);
 pstatement.setString(5, zipcode);
 pstatement.setString(6, quant);
 pstatement.setString(7, cid);
-pstatement.setString(7, pid);
-
+pstatement.setString(8, pid);
 updateQuery = pstatement.executeUpdate();
 if (updateQuery != 0) {%>
 <br>
@@ -97,7 +97,7 @@ if (updateQuery != 0) {%>
 </table>
 <h5> _______________________________________________________________________________________</h5>
 <table TABLE style="background-color: #powderblue;" WIDTH="30%" border="1">
-<tr><td><a href=""><b>View Contacts</b></td><td><input type="submit" value="->" name="order" onclick="location.href='CustomerView.jsp'"></td></tr>
+<tr><td><a href=""><b>View Order</b></td><td><input type="submit" value="->" name="order" onclick="location.href='OrderView.jsp'"></td></tr>
 </table>
 <h5> _______________________________________________________________________________________</h5>
 <%

@@ -45,6 +45,7 @@ p    {color: red;}
 <table border="1">
 <tr>
 <td><a href="logingranted.jsp"><b>Home</b></a></td>
+<td><a href="AdminTranscation.jsp"><b>Make Transaction</b></a></td>
 <td><a href="aboutus.jsp"><b>About US</b></a></td>
 <td><a href="login.jsp"><b>Logout</b></a></td>
 </tr>
@@ -52,7 +53,7 @@ p    {color: red;}
 </div>
 
 
-<form action ="logingranted.jsp" method="post">
+<form action ="" method="post">
 <div class= "deposit page">
 <p style="color:red">
 <div class= "form section">
@@ -61,12 +62,10 @@ p    {color: red;}
 
 String itemid = request.getParameter("itemid");
 String des = request.getParameter("des");
-//int age  = Integer.valueOf(request.getParameter("age"));
 String avl = request.getParameter("avaliability");
 String stock = request.getParameter("stock");
 String id = request.getParameter("id");
 String qut = request.getParameter("quanity");
-//int zipcode = Integer.valueOf(request.getParameter("zipcode"));
 PreparedStatement pstatement = null;
 int updateQuery = 0;
 if(itemid!=null &&  des!=null && avl!=null && stock!=null && id!=null &&    qut!=null  )

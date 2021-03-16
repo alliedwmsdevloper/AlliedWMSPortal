@@ -63,7 +63,10 @@ p    {color: red;}
 <TH width="50%">ZipCode</TH>
 <TD width="50%"><INPUT TYPE="text" NAME="zipcode"></TD>
 </tr>
-
+<TR>
+<TH width="50%">CID</TH>
+<TD width="50%"><INPUT TYPE="text" NAME="id"></TD>
+</tr>
 <TR>
 <TH></TH>
 <TD width="50%"><INPUT TYPE="submit" VALUE="submit"></TD>

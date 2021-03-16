@@ -59,6 +59,7 @@ p    {color: red;}
 <td>State</td>
 <td>Company</td>
 <td>Zipcode</td>
+<td>CID</td>
 </tr>
 <%
 try{
@@ -76,6 +77,7 @@ while(resultSet.next()){
 <td><%=resultSet.getString("state") %></td>
 <td><%=resultSet.getString("company") %></td>
 <td><%=resultSet.getInt("zipcode") %></td>
+<td><%=resultSet.getInt("id") %></td>
 </tr>
 <%
 }

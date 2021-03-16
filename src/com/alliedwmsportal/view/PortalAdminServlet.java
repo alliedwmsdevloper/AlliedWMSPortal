@@ -5,8 +5,6 @@ import java.io.IOException;
 
 
 
-import java.io.IOException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,15 +16,15 @@ import javax.servlet.http.HttpSession;
 import com.alliedwmsportal.controller.PortalAdmin;
 import com.alliedwmsportal.model.PortalAdminCRUD;
 
+import src.com.alliedwmsportal.controller.*;
+import src.com.alliedwmsportal.model.*;
+
 
 @WebServlet("/login")
 
-public class PortalAdminServlet extends HttpServlet{
+public class PortalAdminServlet extends HttpServlet {
 	
-	
-private static final long serialVersionUID = 1L;
-    
-   
+	 
     public PortalAdminServlet() {	
         super();
        
@@ -35,19 +33,20 @@ private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PortalAdminCRUD unkownuser = new PortalAdminCRUD();
 		
+		
+		PortalAdminCRUD unknownuser = new PortalAdminCRUD();
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		//int accountno = Integer.parseInt(request.getParameter("accountno"));
-		//int zipcode = Integer.parseInt(request.getParameter("zipcode"));
 		String accountno = request.getParameter("accountno");
 		String zipcode = request.getParameter("zipcode");
+		
 		PortalAdmin user = new PortalAdmin();
 		user.setUsername(username);
 		user.setPassword(password);
@@ -55,9 +54,8 @@ private static final long serialVersionUID = 1L;
 		user.setZipCode(zipcode);
 	
 		
-		if(!username.isEmpty() && !username.isEmpty() && !username.isEmpty() && !username.isEmpty()  ) {
-		
-				if (unkownuser.validate(user))
+	
+				if (unknownuser.validate(user))
 					{
 							RequestDispatcher dispatcher = request.getRequestDispatcher("logingranted.jsp");
 							dispatcher.forward(request, response);
@@ -70,11 +68,9 @@ private static final long serialVersionUID = 1L;
 			
 				}
 		
-		}
-		else {
-			response.sendRedirect("login.jsp");
-		}
+	
 	
 	
 
-}}
+}
+	}

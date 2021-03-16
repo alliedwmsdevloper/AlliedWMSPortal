@@ -64,7 +64,7 @@ p    {color: red;}
 try{
 connection = DriverManager.getConnection(dbUrl+database, dbUname, dbPassword);
 statement=connection.createStatement();
-String sql ="select * from Product";
+String sql ="select * from product";
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
