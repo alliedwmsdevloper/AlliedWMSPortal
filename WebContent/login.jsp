@@ -24,7 +24,7 @@ p    {color: red;}
 <div class= "form section">
 <h3>Please enter your credentials below</h3>
 <table>
-<tr><td>User Name: </td><td><input type="text" name="username"></td></tr>
+<tr><td>User Name Name: </td><td><input type="text" name="username"></td></tr>
 <tr><td>Password: </td><td><input type="password" name="password"></td></tr>
 <tr><td>Admin ID [0 -9] : </td><td><input type="accountno" name="accountno"></td></tr>
 <tr><td>Security Code [0-9]: </td><td><input type="zipcode" name="zipcode"></td></tr>
